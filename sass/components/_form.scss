@@ -1,0 +1,110 @@
+
+
+.form {
+    width:100%;
+    &_group {
+        margin-bottom: 2rem;
+    }
+    &_input {
+        width:90%;
+        height:50px;
+        display:block;
+        background: $white;
+        padding: 1.5rem 2rem;
+        border: none;
+        border-bottom: 0.3rem solid transparent;
+        font-family: inherit;
+        color: inherit;
+        &:focus {
+          border-bottom-color: $clr_2;  
+          outline: none;
+          box-shadow: 0 1.5rem 4rem rgba($white, 0.9);
+        }
+        &:focus:invalid {
+          border-bottom-color: orangered;  
+        }
+        
+        @include respond(tab-land) {
+            width: 100%;
+        }
+       
+    }
+    &_label {
+        display:block;
+        font-size:1.2rem;
+        font-weight: 700;
+        margin-left:1.5rem;
+        margin-top:0.5rem;
+        transition:all 0.3s;
+    }
+    &_input:placeholder-shown + &_label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+    
+
+    &_radio-group {
+        width:49%;
+        display:inline-block;
+
+        @include respond(tab-land) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+    
+    &_radio-input {
+        display: none;
+    }
+
+    &_radio-label {
+        cursor: pointer;
+        position: relative;
+        padding-left:5rem;
+
+    }
+
+    &_radio-button {
+        position: absolute;
+        left:0;
+        top:-0.2rem;
+        width:3.0rem;
+        height:3.0rem;
+        border:3px solid $clr_2;
+        border-radius:50%;
+
+        &::after {
+            content:'';
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            width:1.5rem;
+            height:1.5rem;
+            background: $clr_2;
+            border-radius:50%;
+            opacity: 0;
+
+        }
+    }
+
+    &_radio-input:checked ~ &_radio-label  &_radio-button::after {
+        opacity:1;
+    }
+    & .btn-more {
+        border: none;
+
+        &:focus {
+            outline:none;
+        }
+    }
+   
+}
+
+
+    
+
+
+
+

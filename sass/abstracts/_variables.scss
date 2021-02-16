@@ -1,0 +1,29 @@
+
+    // COLOR
+    $main:  #25252c;
+    $light: #838386;
+    $clr_1: #50e590;
+    $clr_2: #35c8a4;
+    $clr_3: #0796c6;
+    $white: #fff;
+    $black : #000;
+    $bg_1: linear-gradient(to right, $clr_1, $clr_2);
+    $bg_2: -webkit-linear-gradient(0deg, $clr_3 0%, $clr_1 100%);
+    $bg_1-light: linear-gradient(to right, rgba(80, 229, 144, 0.64), rgba(53, 200, 164, 0.76));
+    $bg_2-light: linear-gradient(0deg, rgba(7, 150, 198, 0.82) 0%, rgba(80, 229, 144, 0.78) 100%);
+
+    //FONT-FAMILY
+    $font_1: 'Poppins', sans-serif;
+
+    //FONT-SIZE
+    $default-font-size: 1.6rem;
+    $default-font-size-medium: 2.5rem;
+
+    // GRID
+    $grid-width: 114rem;
+    $gutter-vertical: 3rem;
+    $gutter-vertical-small: 1.5rem;
+    $gutter-horizontal: 4rem;
+
+
+

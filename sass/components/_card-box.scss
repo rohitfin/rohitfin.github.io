@@ -1,0 +1,127 @@
+
+.card {
+    height:50rem;
+    
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position:relative;
+
+   
+    
+    &_box {
+        height:50rem;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        backface-visibility: hidden;
+        transition: all 0.8s ease;
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        &-front {
+            box-shadow:0 1.5rem 4rem rgba($black, 0.15);
+
+        }
+        &-back {
+            background: $bg_1;
+            transform: rotateY(180deg);
+            
+        }
+
+    }
+
+    &:hover &_box-front {
+        transform: rotateY(-180deg);
+    }
+    &:hover &_box-back {
+        transform: rotateY(0deg);
+    }
+
+
+    &_img {
+        height:25rem;
+        background-blend-mode: soft-light;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+        &-1 {
+            background:$bg_1, url(../images/3.jpg);
+        }
+        &-2 {
+            background:$bg_2, url(../images/4.jpg);
+        }
+        &-3 {
+            background:$bg_1, url(../images/5.jpg);
+        }
+    }
+    &_heading {
+        padding:2rem 3rem 0 3rem;
+    }
+    &_details {
+        padding:0rem 3rem 2rem 3rem;
+    }
+
+    &_box_back-cntr {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        width:100%;
+        text-align: center;
+        color: $white;
+        
+        h3 {
+            color: $white;
+        }
+    }
+
+
+   // @include respond(tab-port) {
+    @media only screen and (max-width: 56.75em),
+    only screen and (hover: none) {
+
+        height:auto;
+        background: $white;
+        box-shadow:0 1.5rem 4rem rgba($black, 0.12);
+    
+        &_box {
+            height:auto;
+            position: relative;;
+            top:0;
+            left:0;
+            
+            &-front {
+                box-shadow:0 1.5rem 4rem rgba($black, 0.0);
+    
+            }
+            &-back {
+                transform: rotateY(0deg);
+                clip-path: polygon(0% 20%, 100% 0, 100% 100%, 0 100%);
+                padding-top: 4rem;                
+            }
+    
+        }
+    
+        &:hover &_box-front {
+            transform: rotateY(0deg);
+        }
+        &:hover &_box-back {
+            transform: rotateY(0deg);
+        }
+    
+        &_box_back-cntr {
+            position: relative;
+            top:0%;
+            left:0%;
+            transform:translate(0%);
+            width:100%;
+        }
+    
+        
+       
+         
+    }
+   
+}
+
+
