@@ -1,0 +1,76 @@
+:root {
+    --syntax-background-color: #08090a;
+    --syntax-text-color: #f8f8f2;
+    --syntax-comment-color: #808080;
+    --syntax-declaration-color: #f39c12;
+
+    --syntax-literal-color: #dda0dd;
+    --syntax-error-color: #f9690e;
+    --syntax-name-color: #7ed07e;
+    --syntax-string-color: #f2ca27;
+    --primary-color: hsla(211,28%,24%,1);
+    --primary-hover-color: hsla(211,39%,19%);
+    --color-tertiary: #1cc4ca;
+    --color-tertiary-hover-color: #24d0d6;
+    --color-quaternary: #1ab7bc;
+    --color-quaternary-hover-color: #1ab7bc;
+    --deep-blue: hsla(205,42%,17%,1);
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../font/Montserrat-Medium.ttf');
+    src: url('../font/Montserrat-Bold.ttf') format('truetype'), url('../font/Montserrat-ExtraBold.ttf') format('truetype'), url('../font/Montserrat-ExtraLight.ttf') format('truetype'), url('../font/Montserrat-Light.ttf') format('truetype'), url('../font/Montserrat-Medium.ttf') format('truetype'), url('../font/Montserrat-MediumItalic.ttf') format('truetype'), url('../font/Montserrat-Regular.ttf') format('truetype'), url('../font/Montserrat-SemiBold.ttf') format('truetype'), url('../font/Montserrat-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  /*  for mac */
+
+    min-height: 100vh;
+    min-height: -webkit-fill-available;  /* mobile viewport bug fix */
+
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+
+    hyphens: manual;
+
+    /* ---- */
+
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Montserrat';
+
+
+}
+img {
+    width: clamp(100%, 100%, 100%);  /*  clamp(MIN, VAL, MAX) */
+    
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+a, a:hover, a:focus {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+

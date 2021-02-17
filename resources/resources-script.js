@@ -11,10 +11,10 @@ $(document).ready(function(){
     $(window).scroll(function(){
         var position = $(window).scrollTop();
         if(position >= 100){
-            $('nav, .navbar_brand').addClass('nav_bg');
+            $('header').addClass('header-bg');
         }
         else{
-            $('nav, .navbar_brand').removeClass('nav_bg');
+            $('header').removeClass('header-bg');
         }
     });
 
@@ -22,8 +22,8 @@ $(document).ready(function(){
     $('.nav_links a').click(function(link){
         link.preventDefault();
         var ac = $(this).attr('href');
-        $('html, body').stop().animate({
-            scrollTop: $(ac).offset().top
+        $('html,body').stop().animate({
+            scrollTop: $(ac).offset().top - 70
         }, 2000);
 
     });
