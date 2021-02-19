@@ -18,18 +18,6 @@ $(document).ready(function(){
         }
     });
 
-    // smooth scrolling
-    $('.nav_links a').click(function(link){
-        link.preventDefault();
-        var ac = $(this).attr('href');
-        $('html, body').stop().animate({
-            scrollTop: $(ac).offset().top
-        }, 2000);
-
-    });
-
-
-
 
 
 

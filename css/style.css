@@ -1,38 +1,10 @@
-:root {
-    --black: #171d29;
-    --gray: #f2f2f2;
-    --black: #000;
-    --main: #E2133A;
-    --main-lighter: #ff3158;
-    --black-lighter: #171d29c2;
 
+/* header start */
+header img {
+    width: auto;
+    height: 50px;
+    margin-top: 10px;
 }
-* {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-body {
-    font-size:1.1rem;
-    font-family: 'Fira Sans Condensed', sans-serif;
-    color:var(--black);
-}
-p {
-    line-height: 1.5rem;
-    margin-bottom:1rem;
-}
-img {
-    width:100%;
-    max-width:100%;
-}
-
-
-
-
-
-
-
-
 nav ul {
     list-style: none;
 }
@@ -45,18 +17,15 @@ nav ul {
 }
 .nav_links a:hover {
     padding-left:30px;
-    background:var(--main-lighter);
+    background: #ff3158;
 }
 .nav_links  {
     display:none;
 }
-.social {
-    display:none;
-}
 .navbar_brand {
-    background:var(--black);
+    background:#000;
     border-bottom:5px solid; 
-    border-color:var(--main);   
+    border-color:#E2133A;   
     padding:20px;
     display:flex;
     justify-content: space-between;
@@ -65,18 +34,18 @@ nav ul {
 .logo {
     font-size:2rem;
     font-weight: 700;
-    color:var(--main);
+    color:#E2133A;
 }
 .nav_btn {
     display:inline-block;
     border:3px solid;
-    border-color:var(--main);
+    border-color:#E2133A;
     padding:5px ;
 }
 .nav_btn_1, .nav_btn_2, .nav_btn_3 {
     width:30px;
     height:3px;
-    background:var(--main);
+    background:#E2133A;
     margin:5px 0; 
     transition:all 0.3s;
 }
@@ -90,12 +59,20 @@ nav ul {
     opacity: 0;
 }
 
-
 header {
     display:flex;
     flex-direction: column;
-    /* height: 100vh; */
 
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 15%);
+    background: #fff;
+}
+.header-bg {
+   background: #fff;
 }
 
 @media(min-width:992px){
@@ -139,16 +116,20 @@ header {
 }
 
 
+
 }
 .nav_bg .navbar_brand {
     background:transparent;
 }
 nav {
-    position:fixed;
+    /* position:fixed; */
     width:100%;
     z-index:99;
     transition:background 1s ease-in-out;
 }
 .nav_bg {
-    background:var(--black-lighter);
+    background:#171d29c2;
 }
+
+
+/* header end */
