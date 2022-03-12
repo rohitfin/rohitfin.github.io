@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="js/jquery.exzoom.js"></script>
+<link href="css/jquery.exzoom.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<style>
+#exzoom { width: 400px;}
+.hidden { display: none; }
+</style>
+<body>
+
+<div class="product_zoom">
+	<h1>Product Zoom</h1>
+	<div class="exzoom hidden" id="exzoom">
+		<div class="exzoom_img_box">
+			<ul class='exzoom_img_ul'>
+				<li><img src="images/zoom-1.jpg"/></li>
+				<li><img src="images/zoom-2.jpg"/></li>
+				<li><img src="images/zoom-3.jpg"/></li>
+				<li><img src="images/zoom-1.jpg"/></li>
+				<li><img src="images/zoom-2.jpg"/></li>
+				<li><img src="images/zoom-3.jpg"/></li>
+			</ul>
+		</div>
+		<div class="exzoom_nav"></div>
+		<p class="exzoom_btn">
+			<a href="javascript:void(0);" class="exzoom_prev_btn"> < </a>
+			<a href="javascript:void(0);" class="exzoom_next_btn"> > </a>
+		</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+    $('.product_zoom').imagesLoaded( function() {
+  $("#exzoom").exzoom({
+        autoPlay: false,
+    });
+  $("#exzoom").removeClass('hidden')
+});
+</script>
+</body>
+</html>

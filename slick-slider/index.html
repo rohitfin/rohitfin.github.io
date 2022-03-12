@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider 1</title>
+
+
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- slick slider -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+		
+</head>
+<body>
+
+
+    <!-- slider -->
+    <style>
+        
+/*-------------- slider start --------------*/
+.slider-area {
+	width:100%;
+	overflow:hidden;
+	position:relative;
+}
+.slick-slider {
+	margin-bottom:0px !important;
+}
+.slider-area img{
+	width:100%;
+	height:550px;
+	object-fit: contain;
+}
+.slider-area .action {
+	position:absolute;
+	bottom:3%;
+	left:50%;
+	transform:translateX(-50%);
+}
+.slider-area .action a{
+	color:#fff;
+	padding:10px 20px;
+	margin-right:20px;
+	background-image: linear-gradient(225deg, #2ed3ae 0%, #109df7 100%);
+	border:2px solid #fff;
+}
+.slick-next {
+	right:3% !important;
+}
+.slick-prev {
+	left:3% !important;
+}
+.slick-next, 
+.slick-prev {
+    z-index:99 !important;
+}
+.slick-next:before, 
+.slick-prev:before {
+    font-size: 30px !important;
+	color:#fff !important;
+}
+
+.slider-content {
+	position:relative;	
+}
+.slider-content:before {
+	position:absolute;
+	content:'';
+	width:100%;
+	height:100%;
+	background-image: linear-gradient(225deg, #2ed3ae 0%, #109df7 100%);
+    opacity: 0.2;
+}
+.slider-text {
+	position:absolute;
+	left:10%;
+	top:50%;
+	transform:translateY(-50%);	
+	color:#fff;
+	z-index:999;
+}
+.slider-text h2 {
+	font-size:70px;
+}
+.slider-text p {
+	font-size:40px;
+}
+
+
+
+
+/*-------------- slider end --------------*/
+
+    </style>
+	<section class="slider-area">
+		<section class="slider-nav">
+			<div class="slider-content"> 
+				<div class="slider-img">
+					<img src="https://www.apple.com/v/mac/home/ai/images/overview/hero/macbook_air__csdfieli984m_large.jpg" alt="creator">
+				</div>
+				<div class="slider-text">
+					<h2>MacBook Air</h2>
+					<p>Lightness strikes again.</p>
+				</div>
+			</div>
+			<div class="slider-content"> 
+				<div class="slider-img">
+					<img src="https://www.apple.com/v/mac/home/ai/images/overview/hero/macbook_pro__2sd1pdltjgye_large.jpg" alt="creator">
+				</div>
+				<div class="slider-text">
+					<h2>MacBook Pro</h2>
+					<p>More power. More performance. More pro.</p>
+				</div>
+			</div>
+			<div class="slider-content"> 
+				<div class="slider-img">
+					<img src="https://www.apple.com/in/mac/home/images/overview/hero/mac_os__dbuuwyfyjm0y_large.jpg" alt="creator">
+				</div>
+				<div class="slider-text">
+					<h2>Mac Pro</h2>
+					<p>Power to change everything.</p>
+				</div>
+			</div>
+		</section>
+		<div class="action">
+			<a href="#" data-slide="1">MacBook Air</a>
+			<a href="#" data-slide="2">MacBook Pro</a>
+			<a href="#" data-slide="3">Mac Pro</a>
+		</div>
+	</section>
+	<script type="text/javascript">
+	$('.slider-nav').slick({
+		infinite: true,
+		autoplay: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: false,
+		arrows:true,
+	 });
+
+	 $('a[data-slide]').click(function(e) {
+	   e.preventDefault();
+	   var slideno = $(this).data('slide');
+	   $('.slider-nav').slick('slickGoTo', slideno - 1);
+	 });
+	</script>
+	<!-- /slider -->
+
+
+
+
+
+    <!-- <img width="1099" height="965" src="images/" class="attachment-full size-full" alt="image" 
+    srcset="images/ab1.jpg 1099w, images/ab1-300x263.jpg 300w, images/ab1-1024x899.jpg 1024w, images/ab1-768x674.jpg 768w" 
+    sizes="(max-width: 1099px) 100vw, 1099px"> -->
+    
+</body>
+</html>

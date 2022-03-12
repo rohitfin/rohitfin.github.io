@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="all.min.css" />
+    <!-- js -->
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="all.min.js"></script>
+</head>
+
+<body>
+    <div class="card">
+        <form class="form" method="post">
+            <div class="form__group">
+                <h3>Fill the Data</h3>
+            </div>
+            <div class="form-details">
+                <div class="form__group">
+                    <label class="form__label" for="name">First Name</label>
+                    <input type="text" id="name" class="form__input" />
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="name">Last Name</label>
+                    <input type="text" id="name" class="form__input" />
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="email"> Email </label>
+                    <input type="email" id="email" name="email" class="form__input" />
+                    <div id="email-list"></div>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="phone"> Phone </label>
+                    <input type="number" id="phone" name="phone" class="form__input" />
+                    <div id="numbers-list"></div>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="family-members"> Family Members </label>
+                    <input type="text" id="family-members" name="family-members" class="form__input" />
+                    <div id="members-list"></div>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="relation"> Relation </label>
+                    <select name="relation" id="relation" class="form__input">
+                        <option value="Brother"> Brother </option>
+                        <option value="Mother"> Mother </option>
+                        <option value="Father"> Father </option>
+                        <option value="Sister"> Sister </option>
+                        <option value="Husband"> Husband </option>
+                        <option value="Wife"> Wife </option>
+                    </select>
+                </div>
+
+
+                <div class="form__group">
+                    <label class="form__label" for="designation"> Designation </label>
+                    <input type="text" id="designation" name="designation" class="form__input" />
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="religion"> Religion </label>
+                    <input type="text" id="religion" name="religion" class="form__input" />
+                </div>
+
+                <div class="form__group ">
+                    <label class="form__label" for="name"> Is Client </label>
+                    <div class="twopart">
+                        <div>
+                            <input type="radio" id="yes" name="gender" value="Yes" class="form__radio" />
+                            <label class="form__radio__label" for="yes">
+                                <span class="form__radio__button"></span>
+                                Yes
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" id="no" name="gender" value="No" class="form__radio" />
+                            <label class="form__radio__label" for="no">
+                                <span class="form__radio__button"></span>
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="city"> City </label>
+                    <input type="text" id="city" name="city" class="form__input" />
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="state"> State </label>
+                    <input type="text" id="state" name="state" class="form__input" />
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="country"> Country </label>
+                    <input type="text" id="country" name="country" class="form__input" />
+                </div>
+
+            </div>
+            <div class="form__group">
+                <input type="submit" id="submit" value="Submit" class="form__button" />
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        var emails = [];
+        var numbers = [];
+        var members = [];
+        $(document).ready(function () {
+
+            $("#email").on("keypress", function (e) {
+                var key = e.which;
+                if (key == 13) {
+                    var res = $(this).val();
+                    if (validateEmail(res)) {
+                        emails.push(res);
+                        showEmails(emails);
+                        $(this).val("");
+                    }
+                }
+            });
+
+            $(document).on("click", ".close-btn", function () {
+                var indexVal = $(this).attr("data-index");
+
+                var result = [];
+                for (var i = 0; i < emails.length; i++) {
+                    if (i != indexVal) {
+                        result.push(emails[i]);
+                    }
+                }
+                emails = result;
+                showEmails(emails);
+            });
+
+
+
+            $("#phone").on("keypress", function (e) {
+                var key = e.which;
+                if (key == 13) {
+                    var res = $(this).val();
+                    if (res.length == 10) {
+                        numbers.push(res);
+                        showNumbers(numbers);
+                        $(this).val("");
+                    }
+                }
+            });
+
+            $(document).on("click", ".close-btn", function () {
+                var indexVal = $(this).attr("data-index");
+
+                var result = [];
+                for (var i = 0; i < numbers.length; i++) {
+                    if (i != indexVal) {
+                        result.push(numbers[i]);
+                    }
+                }
+                numbers = result;
+                showNumbers(numbers);
+            });
+
+
+
+
+            $("#family-members").on("keypress", function (e) {
+                var key = e.which;
+                if (key == 13) {
+                    var res = $(this).val();
+                    if (res.length >= 3) {
+                        var rel = $('#relation option:checked').val();
+                        var fmember = {
+                            name: res,
+                            relation: rel
+                        }
+                        members.push(fmember);
+                        showMembers(members);
+
+
+                        $(this).val("");
+                    }
+                }
+            });
+
+            $(document).on("click", ".close-btn", function () {
+                var indexVal = $(this).attr("data-index");
+
+                var result = [];
+                for (var i = 0; i < members.length; i++) {
+                    if (i != indexVal) {
+                        result.push(members[i]);
+                    }
+                }
+                members = result;
+                showMembers(members);
+            });
+
+
+
+        });
+
+        function showEmails(arr) {
+            var _html = '<ul class="input-value">';
+            for (var i = 0; i < arr.length; i++) {
+                _html +=
+                    "<li>" +
+                    arr[i] +
+                    ' <i class="fas fa-times-circle close-btn" data-index="' +
+                    i +
+                    '"></i> </li>';
+            }
+            _html += "</ul>";
+
+            $("#email-list").html(_html);
+        }
+
+        function showNumbers(arr) {
+            var _html = '<ul class="input-value">';
+            for (var i = 0; i < arr.length; i++) {
+                _html +=
+                    "<li>" +
+                    arr[i] +
+                    ' <i class="fas fa-times-circle close-btn" data-index="' +
+                    i +
+                    '"></i> </li>';
+            }
+            _html += "</ul>";
+
+            $("#numbers-list").html(_html);
+        }
+
+        function showMembers(arr) {
+            var _html = '<ul class="input-value">';
+            for (var i = 0; i < arr.length; i++) {
+                _html +=
+                    "<li>" +
+                    arr[i].name + ' - '+ arr[i].relation +
+                    ' <i class="fas fa-times-circle close-btn" data-index="' + i + '"></i> </li>';
+            }
+            _html += "</ul>";
+
+            $("#members-list").html(_html);
+        }
+
+
+        function validateEmail(email) {
+            return String(email)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+        }
+
+
+        $('#submit').click(function (e) {
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

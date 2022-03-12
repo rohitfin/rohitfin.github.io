@@ -1,0 +1,80 @@
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="footer__content">
+                            <h4 class="heading__h4 brd-b">
+                                Quick links
+                            </h4>
+                            <ul>
+                                 <li><a href="index.html">&#8658; &nbsp; Home</a></li>
+                                 <li><a href="about-us.html">&#8658; &nbsp; About</a></li>
+                                 <li><a href="course.html">&#8658; &nbsp; Course</a></li>
+                                 <li><a href="gallery.html">&#8658; &nbsp; Gallery</a></li>
+                                 <li><a href="contact.html">&#8658; &nbsp; Contact </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer__content">
+                            <h4 class="heading__h4 brd-b">
+                                Courses
+                            </h4>
+                            <ul>
+                                <li><a href="#">&#8658; &nbsp; Photography</a> </li>
+                                <li><a href="#">&#8658; &nbsp; Web Development</a> </li>
+                                <li><a href="#">&#8658; &nbsp; Graphic Design</a> </li>
+                                <li><a href="#">&#8658; &nbsp; Web Language</a> </li>
+                                <li><a href="#">&#8658; &nbsp; UI/UX Development</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer__content">
+                            <h4 class="heading__h4 brd-b">
+                                Contact Us
+                            </h4>
+                                <p><i class="fas fa-map-marker-alt"></i> 4200 M Building, Range Height, East Road.</p>
+                                <p><a href="#"><i class="fas fa-phone"></i> +987 0000 123</a></p>
+                                <p><a href="#"><i class="fas fa-envelope"></i> learn2@gmail.com</a></p>
+                            <div class="social">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="made-by-2brothers d-flex justify-content-center align-items-center flex-column pt-5 pb-5 text-center">
+                <h3 class="heading__h3 mb-3">LEARN</h3>
+                <p>Copyright 2020 Learn Designed By 2brothers | All rights reserved.</p>
+            </div>
+        </footer>
+
+        <div class="top__button">
+            <span><i class="fa fa-arrow-up"></i></span>
+        </div>
+
+        <script>
+            $(document).ready(function(){
+
+           
+            $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $('.top__button').fadeIn();
+
+            } else {
+                $('.top__button').fadeOut();
+            }
+            });
+
+            $('.top__button span').click(function(){
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                return false;
+            });
+
+        });
+        </script>
